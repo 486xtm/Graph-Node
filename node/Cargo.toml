@@ -1,0 +1,41 @@
+[package]
+name = "graph-node"
+version.workspace = true
+edition.workspace = true
+default-run = "graph-node"
+
+[[bin]]
+name = "graph-node"
+path = "src/main.rs"
+
+[[bin]]
+name = "graphman"
+path = "src/bin/manager.rs"
+
+[dependencies]
+env_logger = "0.11.3"
+clap.workspace = true
+git-testament = "0.2"
+lazy_static = "1.2.0"
+url = "2.5.0"
+graph = { path = "../graph" }
+graph-core = { path = "../core" }
+graph-chain-arweave = { path = "../chain/arweave" }
+graph-chain-ethereum = { path = "../chain/ethereum" }
+graph-chain-near = { path = "../chain/near" }
+graph-chain-cosmos = { path = "../chain/cosmos" }
+graph-chain-substreams = { path = "../chain/substreams" }
+graph-chain-starknet = { path = "../chain/starknet" }
+graph-graphql = { path = "../graphql" }
+graph-server-http = { path = "../server/http" }
+graph-server-index-node = { path = "../server/index-node" }
+graph-server-json-rpc = { path = "../server/json-rpc" }
+graph-server-websocket = { path = "../server/websocket" }
+graph-server-metrics = { path = "../server/metrics" }
+graph-store-postgres = { path = "../store/postgres" }
+serde = { workspace = true }
+shellexpand = "3.1.0"
+termcolor = "1.4.1"
+diesel = { workspace = true }
+prometheus = { version = "0.13.3", features = ["push"] }
+json-structural-diff = { version = "0.1", features = ["colorize"] }

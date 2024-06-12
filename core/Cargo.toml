@@ -1,0 +1,32 @@
+[package]
+name = "graph-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+async-trait = "0.1.50"
+atomic_refcell = "0.1.13"
+bytes = "1.0"
+graph = { path = "../graph" }
+# This dependency is temporary. The multiblockchain refactoring is not
+# finished as long as this dependency exists
+graph-chain-arweave = { path = "../chain/arweave" }
+graph-chain-ethereum = { path = "../chain/ethereum" }
+graph-chain-near = { path = "../chain/near" }
+graph-chain-cosmos = { path = "../chain/cosmos" }
+graph-chain-substreams = { path = "../chain/substreams" }
+graph-chain-starknet = { path = "../chain/starknet" }
+graph-runtime-wasm = { path = "../runtime/wasm" }
+serde_yaml = { workspace = true }
+# Switch to crates.io once tower 0.5 is released
+tower = { git = "https://github.com/tower-rs/tower.git", features = ["full"] }
+cid = "0.11.1"
+anyhow = "1.0"
+
+[dev-dependencies]
+tower-test = { git = "https://github.com/tower-rs/tower.git" }
+ipfs-api-backend-hyper = "0.6"
+ipfs-api = { version = "0.17.0", features = [
+    "with-hyper-rustls",
+], default-features = false }
+uuid = { version = "1.8.0", features = ["v4"] }

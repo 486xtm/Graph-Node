@@ -1,0 +1,12 @@
+[package]
+name = "graph-server-http"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+graph = { path = "../../graph" }
+graph-graphql = { path = "../../graphql" }
+
+[dev-dependencies]
+graph-core = { path = "../../core" }
